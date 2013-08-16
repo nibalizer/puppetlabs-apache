@@ -1,0 +1,16 @@
+<% if @wsgi_script_alias -%>
+
+<% Array(@wsgi_script_alias).each do |uri_pair| -%>
+  WSGIScripAlias <%= uri_pair[0] uri_pair[1] %>
+<% end -%>
+<% end -%>
+
+<% if @wsgi_process_group -%>
+  WSGIProcessGroup <% @wsgi_process_group %>
+<% end -%>
+<% if @wsgi_daemon_process -%>
+  WSGIDaemonProcess <% @wsgi_daemon_process %>
+<% end -%>
+
+
+
