@@ -3,7 +3,9 @@
 # Managed by Puppet
 # ************************************
 
+# These configuration directives must be outside a vhost
 <%= scope.function_template(['apache/vhost/_wsgi_listen.erb']) -%>
+
 <VirtualHost <%= @nvh_addr_port %>>
   ServerName <%= @servername_real %>
 <% if @serveradmin -%>
